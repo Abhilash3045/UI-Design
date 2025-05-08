@@ -17,33 +17,54 @@ class Abhilash extends StatelessWidget {
             child: GridView.count(
               crossAxisCount: 2,
               children: [
-                Column(
-                  children: [
-                    Icon(Icons.add_alarm),
-                    Icon(Icons.add),
-                    Icon(Icons.add_box),
-                  ],
+                Container(
+                  height: 60,
+                  width: 80,
+                  color: Colors.blue,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.add_alarm),
+                      Icon(Icons.add),
+                      Icon(Icons.add_box),
+                    ],
+                  ),
                 ),
-                Row(
-                  children: [
-                    Icon(Icons.account_balance),
-                    Icon(Icons.add),
-                    Icon(Icons.add_box),
-                  ],
+                Container(
+                  height: 80,
+                  width: 60,
+                  color: Colors.pinkAccent,
+                  child: Row(
+                      children: [
+                        Icon(Icons.account_balance),
+                        Icon(Icons.add),
+                        Icon(Icons.add_box),
+                    ],
+                  ),
                 ),
-                Stack(
-                  children: [
-                    Icon(Icons.accessible),
-                    //Icon(Icons.add),
-                    //Icon(Icons.add_box),
-                  ],
+                Container(
+                  height: 60,
+                  width: 80,
+                  color: Colors.redAccent,
+                  child: Stack(
+                      children: [
+                        Icon(Icons.accessible),
+                        //Icon(Icons.add),
+                        //Icon(Icons.add_box),
+                    ],
+                  ),
                 ),
-                ListView(
-                  children: [
-                    Icon(Icons.accessibility),
-                    //Icon(Icons.add),
-                    //Icon(Icons.add_box),
-                  ],
+                Container(
+                  height: 80,
+                  width: 60,
+                  color: Colors.yellowAccent,
+                  child: ListView(
+                    children: [
+                      Icon(Icons.accessibility_new),
+                      //Icon(Icons.add),
+                      //Icon(Icons.add_box),
+                    ],
+                  ),
                 ),
               ],
             ),
