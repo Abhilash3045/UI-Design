@@ -72,3 +72,5 @@ class NarrowLayout extends StatelessWidget {
     );
   }
 }
+
+// we used all classes in a single file... if we use different files for different classes then import those classes to the main
