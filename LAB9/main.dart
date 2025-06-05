@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-// Import your widget files
 import 'desktop.dart';
 
 void main() {
