@@ -6,7 +6,7 @@ void main() {
 
 class Main extends StatelessWidget {
   const Main({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,10 +50,11 @@ class WidgetLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Container(
+    color: Colors.lightBlue.shade100,
       child: Text(
         'Mobile layout',
-        style: TextStyle(fontSize: 24, color: Colors.blue),
+        style: TextStyle(fontSize: 24, color: Colors.white),
       ),
     );
   }
@@ -64,13 +65,14 @@ class NarrowLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Container(
+      color: Colors.lightGreenAccent,
       child: Text(
         'Tablet layout',
-        style: TextStyle(fontSize: 32, color: Colors.green),
+        style: TextStyle(fontSize: 32, color: Colors.white),
       ),
     );
   }
 }
-
-// we used all classes in a single file... if we use different files for different classes then import those classes to the main
+//We used all classes in a single file
+//If we used different files for different classes, then we should import respective class into repective file
