@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'widget_layout.dart';
-import 'narrow_layout.dart';
+import 'mobile.dart';
+import 'tablet.dart';
 
 class Desktop extends StatefulWidget {
   const Desktop({super.key});
@@ -17,9 +17,9 @@ class _DesktopState extends State<Desktop> {
       body: LayoutBuilder(
         builder: (context, constraints) {
           if (constraints.maxWidth > 600) {
-            return const WidgetLayout();
+            return const Mobile();
           } else {
-            return const NarrowLayout();
+            return const Tablet();
           }
         },
       ),
