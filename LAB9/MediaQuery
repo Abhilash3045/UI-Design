@@ -1,44 +1,56 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Main());
+  runApp(const Main());
 }
 
 class Main extends StatelessWidget {
+  const Main({super.key});
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Media Query',
-      home: Scaffold(
-        
-        appBar: AppBar(
-          
-          title: Text('MediaQuery text'),
-        ),
-        
-        body: LayoutBuilder(
-          
-          builder: (context, constraints) {
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const Desktop(),
+    );
+  }
+}
 
-            double screenWidth = MediaQuery.of(context).size.width;
+class Desktop extends StatefulWidget {
+  const Desktop({super.key});
 
-            if (screenWidth < 600) {
-              return Mobile();
-            } else {
-              return Tablet();
-            }
-          },
-        ),
+  @override
+  State<Desktop> createState() => _DesktopState();
+}
+
+class _DesktopState extends State<Desktop> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Responsive UI")),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth > 600) {
+            return const WidgetLayout();
+          } else {
+            return const NarrowLayout();
+          }
+        },
       ),
     );
   }
 }
 
 // Class for mobile layout
-class Mobile extends StatelessWidget {
+class WidgetLayout extends StatelessWidget {
+  const WidgetLayout({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text(
         'Mobile layout',
         style: TextStyle(fontSize: 24, color: Colors.blue),
@@ -47,10 +59,12 @@ class Mobile extends StatelessWidget {
   }
 }
 
-class Tablet extends StatelessWidget {
+class NarrowLayout extends StatelessWidget {
+  const NarrowLayout({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text(
         'Tablet layout',
         style: TextStyle(fontSize: 32, color: Colors.green),
@@ -58,4 +72,3 @@ class Tablet extends StatelessWidget {
     );
   }
 }
-
