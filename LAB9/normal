@@ -1,1 +1,61 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(Main());
+}
+
+class Main extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Media Query',
+      home: Scaffold(
+        
+        appBar: AppBar(
+          
+          title: Text('MediaQuery text'),
+        ),
+        
+        body: LayoutBuilder(
+          
+          builder: (context, constraints) {
+
+            double screenWidth = MediaQuery.of(context).size.width;
+
+            if (screenWidth < 600) {
+              return Mobile();
+            } else {
+              return Tablet();
+            }
+          },
+        ),
+      ),
+    );
+  }
+}
+
+// Class for mobile layout
+class Mobile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        'Mobile layout',
+        style: TextStyle(fontSize: 24, color: Colors.blue),
+      ),
+    );
+  }
+}
+
+class Tablet extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        'Tablet layout',
+        style: TextStyle(fontSize: 32, color: Colors.green),
+      ),
+    );
+  }
+}
 
